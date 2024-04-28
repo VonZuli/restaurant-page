@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-color: rgb(37, 37, 37);
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/Donovan.otf') format('opentype'),
+    url('../fonts/donovan.ttf') format('truetype'),
+    url('../fonts/donovan.eot') format('embedded-opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+#content{
+  color: rgb(40, 212, 40);
+  font-family: 'MyFont';
+  letter-spacing: 2px;
+}
+
+img{
+  width: 200px;
+}
+
+button{
+  color: rgb(40, 212, 40);
+  width: 100px;
+  height: 50px;
+  font-family: 'MyFont';
+  letter-spacing: 3px;
+}
