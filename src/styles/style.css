@@ -13,11 +13,21 @@
   font-weight: 600;
   font-style: normal;
 }
-
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px;
+}
 #content{
+  display: flex;
+  flex-direction: column;
   color: rgb(40, 212, 40);
   font-family: 'MyFont';
   letter-spacing: 2px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  text-align: center;
 }
 
 img{
