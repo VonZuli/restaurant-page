@@ -13,6 +13,7 @@
   font-weight: 600;
   font-style: normal;
 }
+
 header{
   display: flex;
   flex-direction: row;
@@ -30,10 +31,6 @@ header{
   padding: 10px;
   text-align: center;
 }
-
-/* #content > h1 {
-  background-color: red;
-} */
 
 img{
   width: 200px;
@@ -54,6 +51,7 @@ img{
   margin: 5px;
   border-radius: 10px;
 }
+
 .title-container, .title-container > h1{
   background-color: red;
 }
@@ -68,24 +66,35 @@ button{
   height: 50px;
   font-family: 'MyFont';
   letter-spacing: 3px;
-  margin: 2px;
+  margin: 5px;
   border-radius: 10px;
-  
+  border: 1px solid red;
+  cursor: pointer;
 }
+
 nav{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
-button:hover{
+
+.active, button:hover{
   background-color: white;
   font-size: larger;
-  box-shadow: 2px 5px rgba(255, 0, 0, 0.603)
+  box-shadow: 2px 5px rgba(255, 0, 0, 0.603);
 }
 
 @media only screen and (max-width: 775px) {
   nav{
     flex-direction: column;
+  }
+}
+@media only screen and (max-width: 555px) {
+  nav{
+    flex-direction: column;
+  }
+  body > header > img:nth-child(3){
+    display: none;
   }
 }
