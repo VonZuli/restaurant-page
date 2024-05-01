@@ -123,6 +123,42 @@ button{
       padding: 10px;
     }
 
+.aboutInfoContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+  .aboutInfoSubtitle{
+    flex: 1 1 70%;
+  }
+  .contactInfo{
+    flex: 1 1 30%;
+  }
+.bio-card{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid red;
+  margin: 0 0 20px 0;
+  padding: 20px;
+  font-size: smaller;
+  justify-content: center;
+}
+  .bio-card > img{
+    border: 3px solid red;
+    border-radius: 10px;
+    min-width: 300px;
+  }
+  .bioInfoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    /* width: 600px */
+  }
+  .bio{
+    width: 300px;
+  }
+
 
 @media only screen and (max-width: 775px) {
   nav{

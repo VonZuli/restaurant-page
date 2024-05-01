@@ -67,42 +67,34 @@ export default function menu(){
     },
   }
 
-// _.forIn(menuItems, function(value,key){
-//   console.log(value, key);
-// })
-
-function buildMenu(){
-  for (const item in menuItems) {
-    const itemObj = menuItems[item];
-    const menuItemContainer = document.createElement('div')
-    const menuItemImage = document.createElement('img')
-    menuItemImage.src = itemObj.image
-    menuItemContainer.classList.add("menuItemContainer")
-    menuContainer.appendChild(menuItemContainer);
-    menuItemContainer.appendChild(menuItemImage)
-    menuItemImage.classList.add('menuItemImg')
-  
-    const descriptionContainer = document.createElement('div')
-    descriptionContainer.classList.add('descriptionContainer')
-  
-    const menuItemTitle = document.createElement('h2')
-    const menuItemDescription = document.createElement('p')
-    const menuItemPrice = document.createElement('p')
-  
-    menuItemTitle.textContent = itemObj.name
-    menuItemDescription.textContent = itemObj.description
-    menuItemPrice.textContent = itemObj.price
-    menuItemContainer.appendChild(descriptionContainer)
-    descriptionContainer.appendChild(menuItemTitle)
-    descriptionContainer.appendChild(menuItemDescription)
-    descriptionContainer.appendChild(menuItemPrice)
+  function buildMenu(){
+    for (const item in menuItems) {
+      const itemObj = menuItems[item];
+      const menuItemContainer = document.createElement('div')
+      const menuItemImage = document.createElement('img')
+      menuItemImage.src = itemObj.image
+      menuItemContainer.classList.add("menuItemContainer")
+      menuContainer.appendChild(menuItemContainer);
+      menuItemContainer.appendChild(menuItemImage)
+      menuItemImage.classList.add('menuItemImg')
+    
+      const descriptionContainer = document.createElement('div')
+      descriptionContainer.classList.add('descriptionContainer')
+    
+      const menuItemTitle = document.createElement('h2')
+      const menuItemDescription = document.createElement('p')
+      const menuItemPrice = document.createElement('p')
+    
+      menuItemTitle.textContent = itemObj.name
+      menuItemDescription.textContent = itemObj.description
+      menuItemPrice.textContent = itemObj.price
+      menuItemContainer.appendChild(descriptionContainer)
+      descriptionContainer.appendChild(menuItemTitle)
+      descriptionContainer.appendChild(menuItemDescription)
+      descriptionContainer.appendChild(menuItemPrice)
+    }
   }
-}
-buildMenu();
 
-  
-
-  
-
+  buildMenu();
 
 }

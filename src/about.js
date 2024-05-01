@@ -1,3 +1,7 @@
+import female60 from './images/female_baker_60s.png'
+import male60 from './images/male_baker_60s.png'
+import male30 from './images/male_baker_30s.png'
+
 export default function about(){
 
   //set active nav button
@@ -15,35 +19,98 @@ export default function about(){
   titleContainer.appendChild(title);
   content.appendChild(titleContainer);
   
-  const contactInfoContainer = document.createElement('div')
+  const aboutInfoContainer = document.createElement('div')
+  const aboutInfoSubtitle = document.createElement('h3')
+  aboutInfoContainer.classList.add('aboutInfoContainer')
+  aboutInfoSubtitle.textContent = 'Meet the team';
+  aboutInfoSubtitle.classList.add('aboutInfoSubtitle')
+  content.appendChild(aboutInfoContainer)
+  aboutInfoContainer.appendChild(aboutInfoSubtitle)
+
+
+  // const contactInfoContainer = document.createElement('div')
   const contactInfo = document.createElement('h3')
   contactInfo.classList.add('contactInfo')
   contactInfo.textContent = 'Contact Us';
-  content.appendChild(contactInfoContainer)
-  contactInfoContainer.appendChild(contactInfo)
+  // content.appendChild(contactInfoContainer)
+  aboutInfoContainer.appendChild(contactInfo)
+
+  const employee0 = new Image()
+  const employee1 = new Image()
+  const employee2 = new Image()
+
   
   const contacts = {
     contact1:{
+      image: employee0.src = male30, 
       firstName: 'Mike',
       lastName: 'Camenzuli',
       position: 'Owner/Lead Baker',
       phone: '(123)456-7890',
       email: 'defrealemail@fakemail.com',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+      fullname: function () {
+        return `${this.firstName} ${this.lastName}`
+      }
     },
     contact2:{
+      image: employee1.src = male60,
       firstName: 'Fred',
       lastName: 'Camenzuli',
       position: 'Baker',
       phone: '(789)456-1230',
       email: 'notfakeemail@fakemail.com',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+      fullname: function () {
+        return `${this.firstName} ${this.lastName}`
+      }
     },
     contact3:{
+      image: employee2.src = female60,
       firstName: 'Ann',
       lastName: 'Camenzuli',
       position: 'Reception',
       phone: '(890)123-456',
       email: 'thisemailisfake@fakemail.com',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+      fullname: function () {
+        return `${this.firstName} ${this.lastName}`
+      }
     }
   }
+
+  function buildAbout(){
+    for (const item in contacts) {
+      const itemObj = contacts[item];
+      const bioCard = document.createElement('div')
+      bioCard.classList.add('bio-card')
+      aboutInfoSubtitle.appendChild(bioCard)
+
+      const aboutInfoImage = document.createElement('img')
+      aboutInfoImage.src = itemObj.image
+      bioCard.appendChild(aboutInfoImage)
+
+      const bioInfoContainer = document.createElement('div')
+      bioInfoContainer.classList.add('bioInfoContainer')
+      bioCard.appendChild(bioInfoContainer)
+      const name = document.createElement('h4')
+      name.classList.add('employee-name')
+      name.textContent = itemObj.fullname(itemObj.firstName, itemObj.lastName);
+      bioInfoContainer.appendChild(name)
+
+      const position = document.createElement('h4')
+      position.classList.add('position')
+      position.textContent = itemObj.position;
+      bioInfoContainer.appendChild(position)
+
+      const bio = document.createElement('p')
+      bio.classList.add('bio')
+      bio.textContent = itemObj.bio;
+      bioInfoContainer.appendChild(bio)
+
+    }
+  }
+
+  buildAbout();
 
 }
