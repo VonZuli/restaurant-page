@@ -40,77 +40,95 @@ export default function about(){
   const employee2 = new Image()
 
   
-  const contacts = {
-    contact1:{
-      image: employee0.src = male30, 
-      firstName: 'Mike',
-      lastName: 'Camenzuli',
-      position: 'Owner/Lead Baker',
-      phone: '(123)456-7890',
-      email: 'defrealemail@fakemail.com',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
-      fullname: function () {
-        return `${this.firstName} ${this.lastName}`
-      }
-    },
-    contact2:{
-      image: employee1.src = male60,
-      firstName: 'Fred',
-      lastName: 'Camenzuli',
-      position: 'Baker',
-      phone: '(789)456-1230',
-      email: 'notfakeemail@fakemail.com',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
-      fullname: function () {
-        return `${this.firstName} ${this.lastName}`
-      }
-    },
-    contact3:{
-      image: employee2.src = female60,
-      firstName: 'Ann',
-      lastName: 'Camenzuli',
-      position: 'Reception',
-      phone: '(890)123-456',
-      email: 'thisemailisfake@fakemail.com',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
-      fullname: function () {
-        return `${this.firstName} ${this.lastName}`
+  const businessInfo = {
+    employeeInfo:{
+      contact1:{
+        image: employee0.src = male30, 
+        firstName: 'Mike',
+        lastName: 'Camenzuli',
+        position: 'Owner/Lead Baker',
+        phone: '(123)456-7890',
+        email: 'defrealemail@fakemail.com',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+        fullname: function () {
+          return `${this.firstName} ${this.lastName}`
+        }
+      },
+      contact2:{
+        image: employee1.src = male60,
+        firstName: 'Fred',
+        lastName: 'Camenzuli',
+        position: 'Baker',
+        phone: '(789)456-1230',
+        email: 'notfakeemail@fakemail.com',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+        fullname: function () {
+          return `${this.firstName} ${this.lastName}`
+        }
+      },
+      contact3:{
+        image: employee2.src = female60,
+        firstName: 'Ann',
+        lastName: 'Camenzuli',
+        position: 'Reception',
+        phone: '(890)123-456',
+        email: 'thisemailisfake@fakemail.com',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+        fullname: function () {
+          return `${this.firstName} ${this.lastName}`
+        }
       }
     }
   }
+
+  // const storeInfo = {
+  //   hours: 
+  //   location:
+  //   phone:
+  //   email:
+  // }
 
   function buildAbout(){
-    for (const item in contacts) {
-      const itemObj = contacts[item];
-      const bioCard = document.createElement('div')
-      bioCard.classList.add('bio-card')
-      aboutInfoSubtitle.appendChild(bioCard)
+    for (const item in businessInfo) {
+      const itemObj = businessInfo[item];
+      for (const employee in businessInfo[item]){
+        const employeeObj = businessInfo[item][employee];
+        const bioCard = document.createElement('div')
+        bioCard.classList.add('bio-card')
+        const cardContainer = document.createElement('div')
+        const subtitle = document.querySelector('.aboutInfoSubtitle')
+        cardContainer.classList.add('card-container')
+        subtitle.appendChild(cardContainer)
+        const aboutInfoImage = document.createElement('img')
+        aboutInfoImage.src = employeeObj.image
 
-      const aboutInfoImage = document.createElement('img')
-      aboutInfoImage.src = itemObj.image
-      bioCard.appendChild(aboutInfoImage)
+        cardContainer.appendChild(bioCard)
+        bioCard.appendChild(aboutInfoImage)
 
-      const bioInfoContainer = document.createElement('div')
-      bioInfoContainer.classList.add('bioInfoContainer')
-      bioCard.appendChild(bioInfoContainer)
-      const name = document.createElement('h4')
-      name.classList.add('employee-name')
-      name.textContent = itemObj.fullname(itemObj.firstName, itemObj.lastName);
-      bioInfoContainer.appendChild(name)
+        const bioInfoContainer = document.createElement('div')
+        bioInfoContainer.classList.add('bioInfoContainer')
+        bioCard.appendChild(bioInfoContainer)
+        const name = document.createElement('h4')
+        name.classList.add('employee-name')
+        name.textContent = employeeObj.fullname(employeeObj.firstName, employeeObj.lastName);
+        bioInfoContainer.appendChild(name)
 
-      const position = document.createElement('h4')
-      position.classList.add('position')
-      position.textContent = itemObj.position;
-      bioInfoContainer.appendChild(position)
+        const position = document.createElement('h4')
+        position.classList.add('position')
+        position.textContent = employeeObj.position;
+        bioInfoContainer.appendChild(position)
 
-      const bio = document.createElement('p')
-      bio.classList.add('bio')
-      bio.textContent = itemObj.bio;
-      bioInfoContainer.appendChild(bio)
-
+        const bio = document.createElement('p')
+        bio.classList.add('bio')
+        bio.textContent = employeeObj.bio;
+        bioInfoContainer.appendChild(bio)
+      }
     }
   }
 
-  buildAbout();
+  function buildContactForm(){
 
+  }
+  buildAbout();
+  buildContactForm();
 }

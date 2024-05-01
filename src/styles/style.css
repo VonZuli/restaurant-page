@@ -129,11 +129,16 @@ button{
   justify-content: space-between;
 }
   .aboutInfoSubtitle{
-    flex: 1 1 70%;
+    flex: 1 1 60%;
   }
   .contactInfo{
-    flex: 1 1 30%;
+    flex: 1 1 40%;
   }
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+}  
 .bio-card{
   display: flex;
   flex-direction: row;
@@ -146,7 +151,8 @@ button{
   .bio-card > img{
     border: 3px solid red;
     border-radius: 10px;
-    min-width: 300px;
+    width: 300px;
+    height: 300px;
   }
   .bioInfoContainer{
     display: flex;
@@ -159,12 +165,45 @@ button{
     width: 300px;
   }
 
+@media only screen and (max-width: 1080px) {
+  .aboutInfoContainer{
+    flex-direction: column;
+  }
+  .card-container{
+    justify-content: center;
+  }  
+}
 
 @media only screen and (max-width: 775px) {
   nav{
     flex-direction: column;
   }
+
 }
+
+@media only screen and (max-width: 660px) {
+  
+  .card-container{
+    max-width: fit-content;
+  }
+  .bio-card{
+    justify-content: center;
+  }
+  .bio-card> img{
+    width: 200px;
+    height: 200px;
+  }
+  .bioInfoContainer{
+    width: 200px;
+    justify-content: center;
+  }
+  .bio{
+    margin-top: 50px;
+    display: none;
+  }
+}
+
+
 @media only screen and (max-width: 555px) {
   nav{
     flex-direction: column;
@@ -172,7 +211,7 @@ button{
   body > header > img:nth-child(3){
     display: none;
   }
-  
+
   .menuItemImg{
     width: 200px;
     border: 3px solid red;
