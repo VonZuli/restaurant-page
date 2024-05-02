@@ -42,38 +42,38 @@ export default function about(){
   
   const businessInfo = {
     employeeInfo:{
-      contact1:{
+      employee0:{
         image: employee0.src = male30, 
         firstName: 'Mike',
         lastName: 'Camenzuli',
         position: 'Owner/Lead Baker',
         phone: '(123)456-7890',
         email: 'defrealemail@fakemail.com',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
         fullname: function () {
           return `${this.firstName} ${this.lastName}`
         }
       },
-      contact2:{
+      employee1:{
         image: employee1.src = male60,
         firstName: 'Fred',
         lastName: 'Camenzuli',
         position: 'Baker',
         phone: '(789)456-1230',
         email: 'notfakeemail@fakemail.com',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
         fullname: function () {
           return `${this.firstName} ${this.lastName}`
         }
       },
-      contact3:{
+      employee2:{
         image: employee2.src = female60,
         firstName: 'Ann',
         lastName: 'Camenzuli',
         position: 'Reception',
         phone: '(890)123-456',
         email: 'thisemailisfake@fakemail.com',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi reprehenderit aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
         fullname: function () {
           return `${this.firstName} ${this.lastName}`
         }

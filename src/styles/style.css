@@ -126,13 +126,22 @@ button{
 .aboutInfoContainer{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 0 200px 0 200px;
+  /* padding: 10px; */
+  
 }
   .aboutInfoSubtitle{
-    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+    /* flex: 1 1 60%; */
+    width: fit-content;
+    justify-content: center;
   }
   .contactInfo{
-    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    
   }
 
 .card-container{
@@ -158,16 +167,23 @@ button{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    /* padding: 20px; */
     /* width: 600px */
+  }
+  .bioInfoContainer > * {
+    padding: 5px;
   }
   .bio{
     width: 300px;
+    text-align: justify;
+    text-justify:auto;
   }
 
 @media only screen and (max-width: 1080px) {
   .aboutInfoContainer{
     flex-direction: column;
+    margin: 0;
+    width: min-content;
   }
   .card-container{
     justify-content: center;
@@ -211,7 +227,7 @@ button{
   body > header > img:nth-child(3){
     display: none;
   }
-
+  
   .menuItemImg{
     width: 200px;
     border: 3px solid red;
