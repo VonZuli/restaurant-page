@@ -23,7 +23,18 @@ header{
   header > .logo{
     margin: 0 5px 0 5px;
   }
-
+footer{
+  background-color: red;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+footer > p{
+  background-color: red;
+  color: white;
+  font-family: 'myfont';
+}
 #content{
   display: flex;
   flex-direction: column;
@@ -136,12 +147,27 @@ button{
     flex-direction: column;
     width: fit-content;
     justify-content: center;
+    padding: 20px;
   }
   .contactInfo{
     display: flex;
     flex-direction: column;
+    padding:20px;
   }
-
+    .contactInfo > div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contactInfo > div > h3{
+      font-size: smaller;
+    }
+    .contactInfo > div > h3 > div{
+      /* display: flex;
+      flex-direction: column; */
+      font-size: smaller;
+      border-top: 2px solid red;
+    }
 .card-container{
   display: flex;
   flex-direction: row;
@@ -177,6 +203,7 @@ button{
     text-justify:auto;
   }
 
+
 @media only screen and (max-width: 1080px) {
   .aboutInfoContainer{
     flex-direction: column;
@@ -191,6 +218,10 @@ button{
   .card-container{
     justify-content: center;
   }  
+  .contactInfo{
+    width: min-content;
+    align-self: center;
+  }
 }
 
 @media only screen and (max-width: 775px) {

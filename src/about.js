@@ -3,7 +3,8 @@ import male60 from './images/male_baker_60s.png'
 import male30 from './images/male_baker_30s.png'
 
 export default function about(){
-
+  
+  document.querySelector('#content').innerHTML = ''
   //set active nav button
   const activeBtn = document.querySelector("button.active")
   const aboutBtn = document.querySelector("button.about")
@@ -222,7 +223,7 @@ export default function about(){
         });
       }
     };
-    
+
     // iterate(storeInfo)
     iterateHours(storeInfo.hours)
     iterateLocation(storeInfo.location)

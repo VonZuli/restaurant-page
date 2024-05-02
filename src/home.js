@@ -6,6 +6,7 @@ import cake from './images/fig_cake.jpeg'
 
 export default function home(){
 
+  document.querySelector('#content').innerHTML = ''
   // set active nav button
   const activeBtn = document.querySelector("button.active")
   const homeBtn = document.querySelector("button.home")
