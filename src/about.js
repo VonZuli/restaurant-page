@@ -71,7 +71,7 @@ export default function about(){
         firstName: 'Ann',
         lastName: 'Camenzuli',
         position: 'Reception',
-        phone: '(890)123-456',
+        phone: '(890)123-4567',
         email: 'thisemailisfake@fakemail.com',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolores deleniti quis omnis rem amet perspiciatis, eligendi aliquid dolor, quas, optio dolorum? Consequatur, ducimus?',
         fullname: function () {
@@ -81,16 +81,11 @@ export default function about(){
     }
   }
 
-  // const storeInfo = {
-  //   hours: 
-  //   location:
-  //   phone:
-  //   email:
-  // }
+
 
   function buildAbout(){
     for (const item in businessInfo) {
-      const itemObj = businessInfo[item];
+      const employeeObj = businessInfo[item];
       for (const employee in businessInfo[item]){
         const employeeObj = businessInfo[item][employee];
         const bioCard = document.createElement('div')
@@ -126,9 +121,115 @@ export default function about(){
     }
   }
 
-  function buildContactForm(){
-
+  const storeInfo = {
+    hours:{
+      sun: 'Sunday - Closed',
+      mon: 'Monday - 8:00am - 4:00pm',
+      tues: 'Tuesday - 8:00am - 4:00pm',
+      wed: 'Wednesday - 8:00am - 4:00pm',
+      thurs: 'Thursday - 8:00am - 4:00pm',
+      fri: 'Friday - 8:00am - 4:00pm',
+      sat: 'Saturday - 8:00am - 4:00pm',
+    }, 
+    location: {
+      address: '123 Fake Street',
+      city: 'Fakeville',
+      province: 'Żejtun',
+      country: 'Malta',
+    },
+    phone: '(890)-123-4567',
+    email: 'mikesmaltesebakery@fakemail.com'
   }
+
+
+
+  function buildContactForm(){
+    for (const item in storeInfo){
+      const storeInfoObj = storeInfo[item];
+      const storeInfoContainer = document.createElement('div');
+      const title = document.querySelector('.contactInfo')
+      storeInfoContainer.classList.add(`${item}-container`)
+      title.appendChild(storeInfoContainer);
+
+      const containerLabel = document.createElement('h3')
+      containerLabel.classList.add(`${item}-subtitle`)
+      containerLabel.textContent = item.charAt(0).toUpperCase() + item.slice(1);
+      storeInfoContainer.appendChild(containerLabel)
+
+
+    }
+    const hoursSubtitle = document.querySelector('.hours-subtitle');
+    const operatingHoursContainer = document.createElement('div');
+    operatingHoursContainer.classList.add('operating-hours')
+    
+    const locationSubtitle = document.querySelector('.location-subtitle');
+    const locationContainer = document.createElement('div');
+    locationContainer.classList.add('location-details')
+    
+    const phoneSubtitle = document.querySelector('.phone-subtitle');
+    const phoneContainer = document.createElement('div');
+    phoneContainer.classList.add('phone-number')
+    const phone = document.createElement('p')
+    phoneContainer.appendChild(phone)
+    phone.textContent = storeInfo.phone
+    
+    const emailSubtitle = document.querySelector('.email-subtitle');
+    const emailContainer = document.createElement('div');
+    emailContainer.classList.add('email-address')
+    const email = document.createElement('p')
+    emailContainer.appendChild(email)
+    email.textContent = storeInfo.email
+
+    hoursSubtitle.appendChild(operatingHoursContainer);
+    locationSubtitle.appendChild(locationContainer);
+    phoneSubtitle.appendChild(phoneContainer);
+    emailSubtitle.appendChild(emailContainer);
+
+    const iterateHours = (obj) => {
+      const stack = [obj];
+      while (stack?.length > 0) {
+        const currentObj = stack.pop();
+        Object.keys(currentObj).forEach(key => {
+  
+          // console.log(`key: ${key}, value: ${currentObj[key]}`);
+          const operatingHours = document.querySelector('.operating-hours')
+          const hours = document.createElement('p');
+          operatingHours.appendChild(hours);
+          hours.textContent = currentObj[key];
+  
+          if (typeof currentObj[key] === 'object' && currentObj[key] !== null) {
+            stack.push(currentObj[key]);
+          }
+        });
+      }
+    };
+
+    const iterateLocation = (obj) => {
+      const stack = [obj];
+      while (stack?.length > 0) {
+        const currentObj = stack.pop();
+        Object.keys(currentObj).forEach(key => {
+  
+          // console.log(`key: ${key}, value: ${currentObj[key]}`);
+          const locationDetails = document.querySelector('.location-details')
+          const location = document.createElement('p');
+          locationDetails.appendChild(location);
+          location.textContent = currentObj[key];
+  
+          if (typeof currentObj[key] === 'object' && currentObj[key] !== null) {
+            stack.push(currentObj[key]);
+          }
+        });
+      }
+    };
+    
+    // iterate(storeInfo)
+    iterateHours(storeInfo.hours)
+    iterateLocation(storeInfo.location)
+  }
+
+
+
   buildAbout();
   buildContactForm();
 }

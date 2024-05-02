@@ -126,22 +126,20 @@ button{
 .aboutInfoContainer{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin: 0 200px 0 200px;
+  justify-content: space-between;
+  margin: 0 100px 0 100px;
   /* padding: 10px; */
   
 }
   .aboutInfoSubtitle{
     display: flex;
     flex-direction: column;
-    /* flex: 1 1 60%; */
     width: fit-content;
     justify-content: center;
   }
   .contactInfo{
     display: flex;
     flex-direction: column;
-    
   }
 
 .card-container{
@@ -183,7 +181,12 @@ button{
   .aboutInfoContainer{
     flex-direction: column;
     margin: 0;
-    width: min-content;
+    flex: 2 1 100%;
+    justify-content: center;
+  }
+  .aboutInfoSubtitle{
+    width: 100%;
+    justify-content: center;
   }
   .card-container{
     justify-content: center;
