@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
   background-color: rgb(58, 57, 57);
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -25,8 +26,9 @@ header{
   }
 
 body{
-  min-height: 100vh;
+  min-height: 98vh;
   display: grid;
+  margin: 0 5px 0 5px;
   grid-template-rows: auto 1fr auto;
 }
 
@@ -41,6 +43,7 @@ footer{
     background-color: red;
     color: white;
     font-family: 'myfont';
+    overflow-y: hidden;
   }
 #content{
   display: flex;
@@ -51,8 +54,12 @@ footer{
   margin: 10px 0 0 0;
   padding: 10px;
   text-align: center;
-  /* height: 100vh; */
 }
+  #content > h3{
+    background-color: red;
+    padding: 20px;
+    /* overflow-y: hidden; */
+  }
 
 img{
   width: 200px;
@@ -68,10 +75,23 @@ nav{
   align-items: center;
 }
 
+.title-container{
+  min-height: 200px;
+  background-image: url('/src/images/exterior_bakery.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 45%;
+  background-size: cover;
+  border: 3px solid red;
+  border-radius: 10px;
+}
 .title-container, .title-container > h1{
   background-color: red;
+  overflow-y: hidden;
 }
-
+  .title-container > h1{
+    display: none;
+  }
 .menuPreview {
   display: flex;
   flex-direction: row;
@@ -236,11 +256,16 @@ button{
   nav{
     flex-direction: column;
   }
+  .menuItemImg{
+    width: 200px;
+    border: 3px solid red;
+    border-radius: 10px;
+    height: 125px;
+  }
 
 }
 
 @media only screen and (max-width: 660px) {
-  
   .card-container{
     max-width: fit-content;
   }
@@ -250,6 +275,7 @@ button{
   .bio-card> img{
     width: 200px;
     height: 200px;
+    cursor: pointer;
   }
   .bioInfoContainer{
     width: 200px;
@@ -259,6 +285,7 @@ button{
     margin-top: 50px;
     display: none;
   }
+
 }
 
 
@@ -271,7 +298,7 @@ button{
   }
   
   .menuItemImg{
-    width: 200px;
+    min-width: 200px;
     border: 3px solid red;
     border-radius: 10px;
     height: 125px;
